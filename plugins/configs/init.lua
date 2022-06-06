@@ -4,7 +4,7 @@ local M = {}
 
 local actions = require('telescope.actions')
 
-M.telescope = {
+M["nvim-telescope/telescope.nvim"] = {
   defaults = {
     prompt_prefix = " ",
     selection_caret = "§ ",
@@ -42,7 +42,7 @@ M.telescope = {
   },
 }
 
-M.treesitter = {
+M["nvim-treesitter/nvim-treesitter"] = {
    ensure_installed = {
       "lua",
       "vim",
@@ -59,7 +59,7 @@ M.treesitter = {
   },
 }
 
-M.bufferline = {
+M["akinsho/bufferline.nvim"] = {
     options = {
     numbers = 'ordinal',
     diagnostics_indicator = function(count)
@@ -74,7 +74,7 @@ M.bufferline = {
   }
 }
 
-M.nvimtree = {
+M['kyazdani42/nvim-tree.lua'] = {
   open_on_setup = true,
   open_on_tab = true,
   view = {
@@ -101,7 +101,7 @@ M.nvimtree = {
   },
 }
 
-M.nvterm = {
+M["NvChad/nvterm"]= {
    terminals = {
       type_opts = {
          float = {
