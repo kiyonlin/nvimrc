@@ -77,7 +77,7 @@ M.hop = {
 
 M.telescope = {
   n = {
-    ["<leader>fr"] = { "<cmd> Telescope live_grep_raw theme=ivy<CR>", "   live grep raw" },
+    ["<leader>fr"] = { "<cmd> lua require'telescope'.extensions.live_grep_raw.live_grep_raw{} <CR>", "   live grep raw" },
     ["<leader>fp"] = { "<cmd> lua require'telescope'.extensions.project.project{}<CR>", "   manage project" },
     ["<leader>fl"] = { "<cmd> lua require'telescope'.extensions.luasnip.luasnip{}<CR>", "   manage luasnip" },
     ["<leader>fs"] = { "<cmd> lua require'telescope'.extensions.aerial.aerial{}<CR>", "   view symbols" },
