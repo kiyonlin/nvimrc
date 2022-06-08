@@ -16,8 +16,8 @@ return {
     module = "telescope._extensions.luasnip",
   },
 
-  ["nvim-telescope/telescope-live-grep-raw.nvim"] = {
-    module = "telescope._extensions.live_grep_raw",
+  ["nvim-telescope/telescope-live-grep-args.nvim"] = {
+    module = "telescope._extensions.live_grep_args",
   },
 
   ["nvim-telescope/telescope-project.nvim"] = {

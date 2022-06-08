@@ -10,19 +10,19 @@ M["nvim-telescope/telescope.nvim"] = {
     selection_caret = "§ ",
     mappings = {
       i = {
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-        ["<ESC>"] = actions.close,
-        ["<CR>"] = actions.select_default + actions.center
+       ["<C-j>"] = actions.move_selection_next,
+       ["<C-k>"] = actions.move_selection_previous,
+       ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+       ["<ESC>"] = require('telescope.actions').close,
+       ["<CR>"] = actions.select_default + actions.center
       },
       n = {
-        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+       ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
       },
     },
   },
   extensions = {
-    live_grep_raw = {
+    live_grep_args = {
       theme = "ivy",
       auto_quoting = false, -- enable/disable auto-quoting
     },
@@ -34,7 +34,7 @@ M["nvim-telescope/telescope.nvim"] = {
   extensions_list = {
     "themes",
     "terms",
-    "live_grep_raw",
+    "live_grep_args",
     "notify",
     "project",
     "luasnip",
