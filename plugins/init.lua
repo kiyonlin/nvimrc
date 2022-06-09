@@ -106,7 +106,11 @@ return {
   },
 
   ["mfussenegger/nvim-dap"] = {
-    requires = {},
+    requires = {
+      {"rcarriga/nvim-dap-ui", opt = true,},
+      {"theHamsta/nvim-dap-virtual-text", opt = true,},
+    },
+    -- keys = {"<leader>dc"},
     opt = true,
     setup = function()
       require("core.utils").packer_lazy_load "nvim-dap"

@@ -84,4 +84,12 @@ M.telescope = {
   },
 }
 
+M.dap = {
+  n = {
+    ["<leader>dc"] = { "<cmd> lua require'dap'.continue() <CR>", "dap continue"},
+    ["<leader>db"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "dap toggle breakpoint"},
+    ["<leader>di"] = { "<cmd> lua require'dap'.step_into() <CR>", "dap step into"},
+    ["<leader>do"] = { "<cmd> lua require'dap'.step_over() <CR>", "dap step over"},
+  },
+}
 return M

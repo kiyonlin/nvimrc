@@ -2,10 +2,35 @@
 local present, dap = pcall(require, "dap")
 
 if not present then
-   return
+  return
+end
+
+-- setup dapui
+local dapui
+present, dapui = pcall(require, "dapui")
+if present then
+  dapui.setup()
+  dap.listeners.after.event_initialized["dapui_config"] = function()
+    dapui.open()
+  end
+  dap.listeners.before.event_terminated["dapui_config"] = function()
+    dapui.close()
+  end
+  dap.listeners.before.event_exited["dapui_config"] = function()
+    dapui.close()
+  end
+end
+
+-- setup virtual text
+local vt
+present, vt = pcall(require, "nvim-dap-virtual-text")
+
+if present then
+  vt.setup()
 end
 
 dap.adapters.go = function(callback, config)
+  vim.pretty_print(config)
   local stdout = vim.loop.new_pipe(false)
   local handle
   local pid_or_err
@@ -33,10 +58,10 @@ dap.adapters.go = function(callback, config)
   end)
   -- Wait for delve to start
   vim.defer_fn(
-    function()
-      callback({type = "server", host = "127.0.0.1", port = port})
-    end,
-    100)
+  function()
+    callback({type = "server", host = "127.0.0.1", port = port})
+  end,
+  100)
 end
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
 dap.configurations.go = {
