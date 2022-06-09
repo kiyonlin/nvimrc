@@ -8,7 +8,7 @@ return {
   },
 
   ["nvim-telescope/telescope.nvim"] = {
-    require = {
+    requires = {
     }
   },
 
@@ -104,4 +104,15 @@ return {
       require("custom.plugins.configs.aerial")
     end
   },
+
+  ["mfussenegger/nvim-dap"] = {
+    requires = {},
+    opt = true,
+    setup = function()
+      require("core.utils").packer_lazy_load "nvim-dap"
+    end,
+    config = function()
+      require("custom.plugins.configs.dap")
+    end
+  }
 }
