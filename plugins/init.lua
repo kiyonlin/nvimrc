@@ -111,10 +111,11 @@ return {
       {"theHamsta/nvim-dap-virtual-text", opt = true,},
     },
     -- keys = {"<leader>dc"},
-    opt = true,
-    setup = function()
-      require("core.utils").packer_lazy_load "nvim-dap"
-    end,
+    -- opt = true,
+    -- setup = function()
+    --   require("core.utils").packer_lazy_load "nvim-dap"
+    -- end,
+    ft = {'go'},
     config = function()
       require("custom.plugins.configs.dap")
     end
