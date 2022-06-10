@@ -1,28 +1,7 @@
 
 local M = {}
 
--- add this table only when you want to disable default keys
-M.disabled = {
-  n = {
-    ["<leader>e"] = "",
-    ["<leader>v"] = "",
-    ["<leader>h"] = "",
-    ["<C-a>"] = "",
-    ["<C-e>"] = "",
-    ["<C-n>"] = "",
-    ["<C-h>"] = "",
-    ["<C-l>"] = "",
-    ["<C-j>"] = "",
-    ["<C-k>"] = "",
-    ["<C-c>"] = "",
-    ["<S-b>"] = "",
-    ["<TAB>"] = "",
-    ["<S-Tab>"] = "",
-  }
-}
-
 M.bufferline = {
-
    n = {
       -- cycle through buffers
       ["<leader>bk"] = { "<cmd> BufferLineCycleNext <CR>", "  cycle next buffer" },
@@ -92,4 +71,31 @@ M.dap = {
     ["<leader>do"] = { "<cmd> lua require'dap'.step_over() <CR>", "dap step over"},
   },
 }
+
+M.nvterm = {
+  n = {
+    ["<A-l>"] = { "<cmd> lua require'nvterm.terminal'.send('lazygit', 'float') <CR>", "open lazygit"}
+  },
+}
+
+-- add this table only when you want to disable default keys
+M.disabled = {
+  n = {
+    ["<leader>e"] = "",
+    ["<leader>v"] = "",
+    ["<leader>h"] = "",
+    ["<C-a>"] = "",
+    ["<C-e>"] = "",
+    ["<C-n>"] = "",
+    ["<C-h>"] = "",
+    ["<C-l>"] = "",
+    ["<C-j>"] = "",
+    ["<C-k>"] = "",
+    ["<C-c>"] = "",
+    ["<S-b>"] = "",
+    ["<TAB>"] = "",
+    ["<S-Tab>"] = "",
+  }
+}
+
 return M

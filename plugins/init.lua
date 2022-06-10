@@ -93,7 +93,7 @@ return {
       require("core.utils").packer_lazy_load "nvim-notify"
     end,
     config = function()
-      require("custom.plugins.configs.other").notify()
+      require("custom.plugins.configs.others").notify()
     end
   },
 
@@ -118,5 +118,12 @@ return {
     config = function()
       require("custom.plugins.configs.dap")
     end
-  }
+  },
+
+  ["max397574/better-escape.nvim"] = {
+    event = "InsertCharPre",
+    config = function()
+      require("custom.plugins.configs.others").better_escape()
+    end,
+  },
 }
