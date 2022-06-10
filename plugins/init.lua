@@ -80,51 +80,52 @@ return {
   ['rmagatti/auto-session'] = {
     -- opt = true,
     -- setup = function()
-    --   require("core.utils").packer_lazy_load "auto-session"
-    -- end,
-    config = function()
-      require("custom.plugins.configs.auto-session")
-    end
-  },
-
-  ['rcarriga/nvim-notify'] = {
-    opt = true,
-    setup = function()
-      require("core.utils").packer_lazy_load "nvim-notify"
-    end,
-    config = function()
-      require("custom.plugins.configs.others").notify()
-    end
-  },
-
-  ["stevearc/aerial.nvim"] = {
-    disable = false,
-    -- after = {"nvim-treesitter"},
-    config = function()
-      require("custom.plugins.configs.aerial")
-    end
-  },
-
-  ["mfussenegger/nvim-dap"] = {
-    requires = {
-      {"rcarriga/nvim-dap-ui", opt = true,},
-      {"theHamsta/nvim-dap-virtual-text", opt = true,},
+      --   require("core.utils").packer_lazy_load "auto-session"
+      -- end,
+      config = function()
+        require("custom.plugins.configs.auto-session")
+      end
     },
-    -- keys = {"<leader>dc"},
-    -- opt = true,
-    -- setup = function()
-    --   require("core.utils").packer_lazy_load "nvim-dap"
-    -- end,
-    ft = {'go'},
-    config = function()
-      require("custom.plugins.configs.dap")
-    end
-  },
 
-  ["max397574/better-escape.nvim"] = {
-    event = "InsertCharPre",
-    config = function()
-      require("custom.plugins.configs.others").better_escape()
-    end,
-  },
-}
+    ['rcarriga/nvim-notify'] = {
+      opt = true,
+      setup = function()
+        require("core.utils").packer_lazy_load "nvim-notify"
+      end,
+      config = function()
+        require("custom.plugins.configs.others").notify()
+      end
+    },
+
+    ["stevearc/aerial.nvim"] = {
+      disable = false,
+      -- after = {"nvim-treesitter"},
+      config = function()
+        require("custom.plugins.configs.aerial")
+      end
+    },
+
+    ["mfussenegger/nvim-dap"] = {
+      requires = {
+        {"rcarriga/nvim-dap-ui", opt = true,},
+        {"theHamsta/nvim-dap-virtual-text", opt = true,},
+      },
+      ft = {'go'},
+      config = function()
+        require("custom.plugins.configs.dap")
+      end
+    },
+
+    ["rcarriga/vim-ultest"] = {
+      ft = {'go'},
+      requires = {"vim-test/vim-test"},
+      run = ":UpdateRemotePlugins"
+    },
+
+    ["max397574/better-escape.nvim"] = {
+      event = "InsertCharPre",
+      config = function()
+        require("custom.plugins.configs.others").better_escape()
+      end,
+    },
+  }
