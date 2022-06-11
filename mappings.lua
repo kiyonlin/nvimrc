@@ -78,6 +78,15 @@ M.nvterm = {
   },
 }
 
+M.ultest = {
+  n = {
+    ["<leader>rr"] = { "<cmd> UltestNearest <CR>", "run nearest test case"},
+    ["<leader>rl"] = { "<cmd> UltestLast <CR>", "run last test case"},
+    ["<leader>rt"] = { "<cmd> Ultest <CR>", "run test cases"},
+    ["<leader>rs"] = { "<cmd> UltestSummary! <CR>", "run test summary"},
+  }
+}
+
 -- add this table only when you want to disable default keys
 M.disabled = {
   n = {
