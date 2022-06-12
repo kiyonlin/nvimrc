@@ -43,11 +43,7 @@ M["nvim-telescope/telescope.nvim"] = {
 }
 
 M["nvim-treesitter/nvim-treesitter"] = {
-   ensure_installed = {
-      "lua",
-      "vim",
-      "go",
-   },
+   ensure_installed = require("custom").file_types,
    incremental_selection = {
     enable = true,
     keymaps = {
@@ -116,6 +112,26 @@ M["NvChad/nvterm"]= {
          vertical = { location = "rightbelow", split_ratio = 0.5 },
       },
    },
+}
+
+M["nvim-treesitter/nvim-treesitter"] = {
+  -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  textobjects = {
+    select = {
+      enable = true,
+
+      -- Automatically jump forward to textobj, similar to targets.vim
+      lookahead = true,
+
+      keymaps = {
+        -- You can use the capture groups defined in textobjects.scm
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+      },
+    },
+  },
 }
 
 return M

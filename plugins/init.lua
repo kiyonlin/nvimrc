@@ -1,3 +1,5 @@
+local file_types = require("custom").file_types
+
 return {
   ["wbthomason/packer.nvim"] = {
     git = { default_url_format = "https://hub.fastgit.org/%s" },
@@ -7,9 +9,19 @@ return {
     cmd = {"NvimTreeFindFileToggle"},
   },
 
+  ["jose-elias-alvarez/null-ls.nvim"] = {
+    -- after = "nvim-treesitter/nvim-treesitter",
+    ft = file_types,
+    config = function ()
+      require("custom.plugins.configs.null-ls")
+    end
+  },
+
+  ["nvim-treesitter/nvim-treesitter-textobjects"] = {
+    ft = file_types,
+  },
+
   ["nvim-telescope/telescope.nvim"] = {
-    requires = {
-    }
   },
 
   ["benfowler/telescope-luasnip.nvim"] = {
@@ -117,9 +129,23 @@ return {
     },
 
     ["rcarriga/vim-ultest"] = {
-      ft = {'go'},
-      requires = {"vim-test/vim-test"},
+      ft = file_types,
+      requires = {
+        {"vim-test/vim-test", ft = file_types,},
+      },
       run = ":UpdateRemotePlugins"
+    },
+
+    ["sindrets/diffview.nvim"] = {
+      requires = {"nvim-lua/plenary.nvim"},
+      cmd = {"DiffviewFileHistory"},
+      -- opt = true,
+      -- setup = function()
+      --   require("core.utils").packer_lazy_load "diffview.vim"
+      -- end,
+      config = function()
+        require("custom.plugins.configs.diffview")
+      end
     },
 
     ["max397574/better-escape.nvim"] = {
@@ -128,4 +154,15 @@ return {
         require("custom.plugins.configs.others").better_escape()
       end,
     },
+
+    [ "folke/trouble.nvim" ] = {
+      opt = true,
+      setup = function()
+        require("core.utils").packer_lazy_load "trouble.nvim"
+      end,
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("custom.plugins.configs.trouble")
+      end
+    }
   }

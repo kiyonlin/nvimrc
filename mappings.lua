@@ -31,6 +31,9 @@ M.general = {
     -- Copy all
     ["<C-a>"] = { "<cmd> %y+ <CR>", " copy whole file" },
   },
+  v = {
+    ["jk"] = {"<esc>", "escape visual mode"}
+  }
 }
 
 M.nvimtree = {
@@ -49,8 +52,11 @@ M.switch = {
 M.hop = {
   n = {
     ["<leader>hc"] = {"<cmd> HopChar1 <CR>", "Hop to char1"},
+    ["<leader>C"] = {"<cmd> HopChar1 <CR>", "Hop to char1"},
     ["<leader>hl"] = {"<cmd> HopLine <CR>", "Hop to line"},
+    ["<leader>L"] = {"<cmd> HopLine <CR>", "Hop to line"},
     ["<leader>hw"] = {"<cmd> HopWord <CR>", "Hop to word"},
+    ["<leader>W"] = {"<cmd> HopWord <CR>", "Hop to word"},
   },
 }
 
@@ -65,10 +71,12 @@ M.telescope = {
 
 M.dap = {
   n = {
-    ["<leader>dc"] = { "<cmd> lua require'dap'.continue() <CR>", "dap continue"},
-    ["<leader>db"] = { "<cmd> lua require'dap'.toggle_breakpoint() <CR>", "dap toggle breakpoint"},
-    ["<leader>di"] = { "<cmd> lua require'dap'.step_into() <CR>", "dap step into"},
-    ["<leader>do"] = { "<cmd> lua require'dap'.step_over() <CR>", "dap step over"},
+    ["<leader>dc"] = { "<cmd> DapContinue <CR>", "dap continue"},
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "dap toggle breakpoint"},
+    ["<leader>di"] = { "<cmd> DapStepInto <CR>", "dap step into"},
+    ["<leader>do"] = { "<cmd> DapStepOver <CR>", "dap step over"},
+    ["<leader>dO"] = { "<cmd> DapStepOut <CR>", "dap step out"},
+    ["<leader>dt"] = { "<cmd> DapStepTerminal <CR>", "dap step terminal"},
   },
 }
 
