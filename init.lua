@@ -13,8 +13,8 @@ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tab
 vim.opt.runtimepath:append(vim.fn.stdpath "config" .. "/lua/custom")
 
 M.file_types = {
-  "go", "gomod", "css", "html", "sql", "yaml", "yml", "vue",
-  "py", "lua", "json",
+  "go", "gomod", "gowork", "css", "html", "sql", "yaml", "yml", "vue",
+  "py", "lua", "json", "toml",
 }
 
 return M

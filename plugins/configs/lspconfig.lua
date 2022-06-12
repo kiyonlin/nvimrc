@@ -9,7 +9,8 @@ M.setup_lsp = function(attach, capabilities)
    -- lspservers with default config
    local servers = {
      "html", "cssls", "gopls", "jsonls", "volar",
-     "yamlls", "sqls", "marksman", "pyright"
+     "yamlls", "sqls", "marksman", "pyright",
+     "taplo", -- toml
    }
 
    for _, lsp in ipairs(servers) do

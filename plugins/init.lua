@@ -28,6 +28,10 @@ return {
     module = "telescope._extensions.luasnip",
   },
 
+  ["nvim-telescope/telescope-dap.nvim"] = {
+    module = "telescope._extensions.dap",
+  },
+
   ["nvim-telescope/telescope-live-grep-args.nvim"] = {
     module = "telescope._extensions.live_grep_args",
   },

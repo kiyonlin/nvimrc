@@ -10,14 +10,14 @@ M["nvim-telescope/telescope.nvim"] = {
     selection_caret = "§ ",
     mappings = {
       i = {
-       ["<C-j>"] = actions.move_selection_next,
-       ["<C-k>"] = actions.move_selection_previous,
-       ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-       ["<ESC>"] = require('telescope.actions').close,
-       ["<CR>"] = actions.select_default + actions.center
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+        ["<ESC>"] = require('telescope.actions').close,
+        ["<CR>"] = actions.select_default + actions.center
       },
       n = {
-       ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
       },
     },
   },
@@ -39,12 +39,17 @@ M["nvim-telescope/telescope.nvim"] = {
     "project",
     "luasnip",
     "aerial",
+    "dap",
   },
 }
 
 M["nvim-treesitter/nvim-treesitter"] = {
-   ensure_installed = require("custom").file_types,
-   incremental_selection = {
+  ensure_installed = {
+    "go", "gomod", "gowork", "lua",
+    "json", "css", "html", "vue",
+    "python", "toml", "yaml",
+  },
+  incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = '<CR>',
@@ -56,7 +61,7 @@ M["nvim-treesitter/nvim-treesitter"] = {
 }
 
 M["akinsho/bufferline.nvim"] = {
-    options = {
+  options = {
     numbers = 'ordinal',
     diagnostics_indicator = function(count)
       return '('..count..')'
@@ -98,20 +103,20 @@ M['kyazdani42/nvim-tree.lua'] = {
 }
 
 M["NvChad/nvterm"]= {
-   terminals = {
-      type_opts = {
-         float = {
-            relative = "editor",
-            row = 0.15,
-            col = 0.1,
-            width = 0.8,
-            height = 0.7,
-            border = "single",
-         },
-         horizontal = { location = "rightbelow", split_ratio = 0.3 },
-         vertical = { location = "rightbelow", split_ratio = 0.5 },
+  terminals = {
+    type_opts = {
+      float = {
+        relative = "editor",
+        row = 0.15,
+        col = 0.1,
+        width = 0.8,
+        height = 0.7,
+        border = "single",
       },
-   },
+      horizontal = { location = "rightbelow", split_ratio = 0.3 },
+      vertical = { location = "rightbelow", split_ratio = 0.5 },
+    },
+  },
 }
 
 M["nvim-treesitter/nvim-treesitter"] = {
