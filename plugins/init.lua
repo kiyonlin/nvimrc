@@ -42,7 +42,7 @@ return {
 
   ['AndrewRadev/switch.vim'] = {
     cmd = {"Switch"},
-    setup = function()
+    config = function()
       require('custom.plugins.configs.switch')
     end,
   },
