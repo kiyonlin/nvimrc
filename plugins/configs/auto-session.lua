@@ -7,13 +7,13 @@ end
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
-vim.cmd([[
+vim.cmd [[
 autocmd VimLeavePre * silent! :SaveSession
-]])
+]]
 
 local options = {
-  auto_session_enable_last_session = true,
-  pre_save_cmds = {"tabdo NvimTreeClose"}
+   auto_session_enable_last_session = true,
+   pre_save_cmds = { "tabdo NvimTreeClose" },
 }
 
 session.setup(options)

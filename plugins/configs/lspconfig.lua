@@ -3,14 +3,18 @@ local M = {}
 M.setup_lsp = function(attach, capabilities)
    local present, lspconfig = pcall(require, "lspconfig")
    if not present then
-    return
+      return
    end
 
    -- lspservers with default config
    local servers = {
-     "html", "cssls", "gopls", "jsonls", "volar",
-     "yamlls", "sqls", "marksman", "pyright",
-     "taplo", -- toml
+      "html",
+      "cssls",
+      "gopls",
+      "jsonls",
+      "yamlls",
+      "marksman",
+      "pyright",
    }
 
    for _, lsp in ipairs(servers) do
