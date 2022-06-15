@@ -66,6 +66,23 @@ M["nvim-treesitter/nvim-treesitter"] = {
          scope_incremental = "<TAB>",
       },
    },
+   -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+   textobjects = {
+      select = {
+         enable = true,
+
+         -- Automatically jump forward to textobj, similar to targets.vim
+         lookahead = true,
+
+         keymaps = {
+            -- You can use the capture groups defined in textobjects.scm
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+         },
+      },
+   },
 }
 
 M["akinsho/bufferline.nvim"] = {
@@ -124,30 +141,8 @@ M["NvChad/nvterm"] = {
             width = 0.8,
             height = 0.7,
             border = "single",
-         },
-         horizontal = { location = "rightbelow", split_ratio = 0.3 },
-         vertical = { location = "rightbelow", split_ratio = 0.5 },
-      },
-   },
-}
-
-M["nvim-treesitter/nvim-treesitter"] = {
-   -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-   textobjects = {
-      select = {
-         enable = true,
-
-         -- Automatically jump forward to textobj, similar to targets.vim
-         lookahead = true,
-
-         keymaps = {
-            -- You can use the capture groups defined in textobjects.scm
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-         },
-      },
+          },
+        },
    },
 }
 

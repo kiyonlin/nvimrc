@@ -56,7 +56,7 @@ return {
    ["folke/todo-comments.nvim"] = {
       opt = true,
       setup = function()
-         require("core.utils").packer_lazy_load "todo-comments.nvim"
+         require("custom").packer_lazy_load "todo-comments.nvim"
       end,
       config = function()
          require("todo-comments").setup()
@@ -73,7 +73,7 @@ return {
    ["ur4ltz/surround.nvim"] = {
       opt = true,
       setup = function()
-         require("core.utils").packer_lazy_load "surround.nvim"
+         require("custom").packer_lazy_load "surround.nvim"
       end,
       config = function()
          require("surround").setup { mappings_style = "surround" }
@@ -92,10 +92,10 @@ return {
    },
 
    ["rmagatti/auto-session"] = {
-      -- opt = true,
-      -- setup = function()
-      --   require("core.utils").packer_lazy_load "auto-session"
-      -- end,
+      opt = true,
+      setup = function()
+        require("custom").packer_lazy_load "auto-session"
+      end,
       config = function()
          require "custom.plugins.configs.auto-session"
       end,
@@ -104,7 +104,7 @@ return {
    ["rcarriga/nvim-notify"] = {
       opt = true,
       setup = function()
-         require("core.utils").packer_lazy_load "nvim-notify"
+         require("custom").packer_lazy_load "nvim-notify"
       end,
       config = function()
          require("custom.plugins.configs.others").notify()
@@ -143,7 +143,7 @@ return {
       cmd = { "DiffviewFileHistory" },
       -- opt = true,
       -- setup = function()
-      --   require("core.utils").packer_lazy_load "diffview.vim"
+      --   require("custom").packer_lazy_load "diffview.vim"
       -- end,
       config = function()
          require "custom.plugins.configs.diffview"
@@ -160,7 +160,7 @@ return {
    ["folke/trouble.nvim"] = {
       opt = true,
       setup = function()
-         require("core.utils").packer_lazy_load "trouble.nvim"
+         require("custom").packer_lazy_load "trouble.nvim"
       end,
       requires = "kyazdani42/nvim-web-devicons",
       config = function()
