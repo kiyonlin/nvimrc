@@ -11,6 +11,7 @@ autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tab
 ]]
 
 vim.opt.runtimepath:append(vim.fn.stdpath "config" .. "/lua/custom")
+vim.opt.guifont = "Cousine Nerd Font Mono:h12"
 
 M.file_types = {
    "go",

@@ -51,6 +51,7 @@ M.switch = {
 M.hop = {
    n = {
       ["<leader>hc"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
+      ["<leader>hh"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
       ["<leader>C"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
       ["<leader>hl"] = { "<cmd> HopLine <CR>", "Hop to line" },
       ["<leader>L"] = { "<cmd> HopLine <CR>", "Hop to line" },
