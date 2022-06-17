@@ -2,24 +2,10 @@
 
 local M = {}
 
-local actions = require "telescope.actions"
-
 M["nvim-telescope/telescope.nvim"] = {
    defaults = {
       prompt_prefix = " ",
       selection_caret = "§ ",
-      mappings = {
-         i = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-            ["<ESC>"] = require("telescope.actions").close,
-            ["<CR>"] = actions.select_default + actions.center,
-         },
-         n = {
-            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-         },
-      },
    },
    extensions = {
       live_grep_args = {
@@ -42,6 +28,27 @@ M["nvim-telescope/telescope.nvim"] = {
       "dap",
    },
 }
+
+
+local present, actions = pcall(require, "telescope.actions")
+
+if present then
+  M["nvim-telescope/telescope.nvim"].defaults.mappings = {
+    i = {
+      ["<C-j>"] = actions.move_selection_next,
+      ["<C-k>"] = actions.move_selection_previous,
+      ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+      ["<ESC>"] = require("telescope.actions").close,
+      ["<CR>"] = actions.select_default + actions.center,
+    },
+    n = {
+      ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+    },
+  }
+else
+  print("telescope.actions not found")
+end
+
 
 M["nvim-treesitter/nvim-treesitter"] = {
    ensure_installed = {
@@ -132,18 +139,18 @@ M["kyazdani42/nvim-tree.lua"] = {
 }
 
 M["NvChad/nvterm"] = {
-   terminals = {
-      type_opts = {
-         float = {
-            relative = "editor",
-            row = 0.15,
-            col = 0.1,
-            width = 0.8,
-            height = 0.7,
-            border = "single",
-          },
-        },
-   },
+  terminals = {
+    type_opts = {
+      float = {
+        relative = "editor",
+        row = 0.15,
+        col = 0.1,
+        width = 0.8,
+        height = 0.7,
+        border = "single",
+      },
+    },
+  },
 }
 
 return M
