@@ -10,16 +10,14 @@ return {
    },
 
    ["L3MON4D3/LuaSnip"] = {
-     config = function()
-       require("plugins.configs.others").luasnip()
-       print "luasnip"
-       require("luasnip.loaders.from_vscode")
-       .lazy_load({paths="./lua/custom/snippets"})
-     end,
+      config = function()
+         require("plugins.configs.others").luasnip()
+         require("luasnip.loaders.from_vscode").lazy_load { paths = "./lua/custom/snippets" }
+      end,
    },
 
    ["jose-elias-alvarez/null-ls.nvim"] = {
-      -- after = "nvim-treesitter/nvim-treesitter",
+      disable = true,
       ft = file_types,
       config = function()
          require "custom.plugins.configs.null-ls"
@@ -101,10 +99,11 @@ return {
    },
 
    ["rmagatti/auto-session"] = {
-      opt = true,
-      setup = function()
-        require("custom").packer_lazy_load "auto-session"
-      end,
+      -- opt = true,
+      -- setup = function()
+      --    require("custom").packer_lazy_load "auto-session"
+      -- end,
+      -- cmd = "RestoreSession",
       config = function()
          require "custom.plugins.configs.auto-session"
       end,
@@ -121,7 +120,7 @@ return {
    },
 
    ["stevearc/aerial.nvim"] = {
-      cmd = {"AerialToggle"},
+      cmd = { "AerialToggle" },
       module = "telescope._extensions.aerial",
       config = function()
          require "custom.plugins.configs.aerial"
@@ -176,4 +175,22 @@ return {
          require "custom.plugins.configs.trouble"
       end,
    },
- }
+
+   ["mhartington/formatter.nvim"] = {
+     cmd = {"Forma", "FormatWrite"},
+      config = function()
+         require "custom.plugins.configs.formatter"
+      end,
+   },
+
+   ["akinsho/toggleterm.nvim"] = {
+      opt = true,
+      setup = function()
+         require("custom").packer_lazy_load "toggleterm.nvim"
+      end,
+      -- cmd = {"ToggleTerm"},
+      config = function()
+         require "custom.plugins.configs.toggleterm"
+      end,
+   },
+}

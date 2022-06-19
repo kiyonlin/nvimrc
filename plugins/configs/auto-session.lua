@@ -12,8 +12,8 @@ autocmd VimLeavePre * silent! :SaveSession
 ]]
 
 local options = {
-   auto_session_enable_last_session = true,
-   pre_save_cmds = { "tabdo NvimTreeClose" },
+   auto_session_enable_last_session = false,
+   -- pre_save_cmds = { "tabdo NvimTreeClose" },
 }
 
 session.setup(options)

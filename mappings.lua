@@ -29,22 +29,13 @@ M.general = {
    n = {
       -- Copy all
       ["<C-a>"] = { "<cmd> %y+ <CR>", " copy whole file" },
+      ["<leader>1"] = { "<cmd> NvimTreeFindFileToggle <CR>", "   focus nvimtree" },
+      ["<leader>4"] = { "<cmd> ToggleTerm <CR>", "   open vertical terminal" },
+      ["<leader>jt"] = { "<cmd> ToggleTerm direction=float <CR>", "   open float terminal" },
+      ["<leader>sw"] = { "<cmd> Switch <CR>", "    switch t/f" },
    },
    v = {
       ["jk"] = { "<esc>", "escape visual mode" },
-   },
-}
-
-M.nvimtree = {
-   n = {
-      -- focus
-      ["<leader>1"] = { "<cmd> NvimTreeFindFileToggle <CR>", "   focus nvimtree" },
-   },
-}
-
-M.switch = {
-   n = {
-      ["<leader>sw"] = { "<cmd> Switch <CR>", "    switch t/f" },
    },
 }
 
@@ -52,22 +43,16 @@ M.hop = {
    n = {
       ["<leader>hc"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
       ["<leader>hh"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
-      ["<leader>C"] = { "<cmd> HopChar1 <CR>", "Hop to char1" },
       ["<leader>hl"] = { "<cmd> HopLine <CR>", "Hop to line" },
-      ["<leader>L"] = { "<cmd> HopLine <CR>", "Hop to line" },
       ["<leader>hw"] = { "<cmd> HopWord <CR>", "Hop to word" },
-      ["<leader>W"] = { "<cmd> HopWord <CR>", "Hop to word" },
    },
 }
 
 M.telescope = {
    n = {
-      ["<leader>fr"] = {
-         "<cmd> lua require'telescope'.extensions.live_grep_args.live_grep_args{} <CR>",
-         "   live grep raw",
-      },
-      ["<leader>fp"] = { "<cmd> lua require'telescope'.extensions.project.project{}<CR>", "   manage project" },
-      ["<leader>fl"] = { "<cmd> lua require'telescope'.extensions.luasnip.luasnip{}<CR>", "   manage luasnip" },
+      ["<leader>fr"] = { "<cmd> Telescope live_grep_args <CR>", "   live grep raw" },
+      ["<leader>fp"] = { "<cmd> Telescope project <CR>", "   manage project" },
+      ["<leader>fl"] = { "<cmd> Telescope luasnip <CR>", "   manage luasnip" },
       ["<leader>fs"] = { "<cmd> Telescope aerial <CR>", "   view symbols" },
    },
 }
@@ -83,12 +68,6 @@ M.dap = {
    },
 }
 
-M.nvterm = {
-  n = {
-    ["<A-l>"] = { "<cmd> lua require'nvterm.terminal'.send('lazygit', 'float') <CR>", "open lazygit"}
-  },
-}
-
 M.ultest = {
    n = {
       ["<leader>rr"] = { "<cmd> UltestNearest <CR>", "run nearest test case" },
@@ -98,8 +77,9 @@ M.ultest = {
    },
 }
 
-M.gitsigns = {
+M.git = {
   n = {
+    ["<leader>gg"] = { "<cmd> lua lazygit_toggle() <CR>", "open lazygit"},
     ["<leader>gr"] = { "<cmd> Gitsigns reset_hunk <CR>", "git reset hunk"},
     ["<leader>gb"] = { "<cmd> Gitsigns reset_buffer <CR>", "git reset buffer"},
     ["<leader>gj"] = { "<cmd> Gitsigns next_hunk <CR>", "git hunk next"},
