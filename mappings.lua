@@ -30,7 +30,7 @@ M.general = {
       -- Copy all
       ["<C-a>"] = { "<cmd> %y+ <CR>", " copy whole file" },
       ["<leader>1"] = { "<cmd> NvimTreeFindFileToggle <CR>", "   focus nvimtree" },
-      ["<leader>4"] = { "<cmd> ToggleTerm <CR>", "   open vertical terminal" },
+      ["<leader>4"] = { "<cmd> ToggleTerm <CR>", "   open horizontal terminal" },
       ["<leader>jt"] = { "<cmd> ToggleTerm direction=float <CR>", "   open float terminal" },
       ["<leader>sw"] = { "<cmd> Switch <CR>", "    switch t/f" },
    },
