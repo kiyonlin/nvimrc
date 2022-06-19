@@ -98,6 +98,19 @@ M.ultest = {
    },
 }
 
+M.gitsigns = {
+  n = {
+    ["<leader>gr"] = { "<cmd> Gitsigns reset_hunk <CR>", "git reset hunk"},
+    ["<leader>gb"] = { "<cmd> Gitsigns reset_buffer <CR>", "git reset buffer"},
+    ["<leader>gj"] = { "<cmd> Gitsigns next_hunk <CR>", "git hunk next"},
+    ["<leader>gk"] = { "<cmd> Gitsigns pre_hunk <CR>", "git hunk previous"},
+    ["<leader>gp"] = { "<cmd> Gitsigns preview_hunk <CR>", "git hunk preview"},
+    ["<leader>gh"] = { "<cmd> DiffviewFileHistory % <CR>", "git diffview current file history"},
+    ["<leader>ga"] = { "<cmd> DiffviewFileHistory <CR>", "git diffview all files history"},
+    ["<leader>gx"] = { "<cmd> DiffviewClose <CR>", "git diffview close"},
+  },
+}
+
 -- add this table only when you want to disable default keys
 M.disabled = {
    n = {
