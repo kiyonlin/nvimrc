@@ -68,7 +68,7 @@ M.telescope = {
       },
       ["<leader>fp"] = { "<cmd> lua require'telescope'.extensions.project.project{}<CR>", "   manage project" },
       ["<leader>fl"] = { "<cmd> lua require'telescope'.extensions.luasnip.luasnip{}<CR>", "   manage luasnip" },
-      ["<leader>fs"] = { "<cmd> lua require'telescope'.extensions.aerial.aerial{}<CR>", "   view symbols" },
+      ["<leader>fs"] = { "<cmd> Telescope aerial <CR>", "   view symbols" },
    },
 }
 

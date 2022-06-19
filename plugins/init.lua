@@ -9,6 +9,15 @@ return {
       cmd = { "NvimTreeFindFileToggle" },
    },
 
+   ["L3MON4D3/LuaSnip"] = {
+     config = function()
+       require("plugins.configs.others").luasnip()
+       print "luasnip"
+       require("luasnip.loaders.from_vscode")
+       .lazy_load({paths="./lua/custom/snippets"})
+     end,
+   },
+
    ["jose-elias-alvarez/null-ls.nvim"] = {
       -- after = "nvim-treesitter/nvim-treesitter",
       ft = file_types,
@@ -112,8 +121,8 @@ return {
    },
 
    ["stevearc/aerial.nvim"] = {
-      disable = false,
-      -- after = {"nvim-treesitter"},
+      cmd = {"AerialToggle"},
+      module = "telescope._extensions.aerial",
       config = function()
          require "custom.plugins.configs.aerial"
       end,
