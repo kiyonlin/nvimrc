@@ -1,0 +1,7 @@
+{
+  "fiber hello world": {
+    "prefix": "fhw",
+    "body": "import \"${1:package}\"",
+    "description": "Snippet for Fiber hello world example"
+  }
+}
