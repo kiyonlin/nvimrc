@@ -15,6 +15,8 @@ M.setup_lsp = function(attach, capabilities)
       "yamlls",
       "marksman",
       "pyright",
+      "tsserver",
+      "volar",
    }
 
    for _, lsp in ipairs(servers) do

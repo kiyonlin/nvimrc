@@ -60,6 +60,8 @@ M["nvim-treesitter/nvim-treesitter"] = {
       "css",
       "html",
       "vue",
+      "javascript",
+      "typescript",
       "python",
       "toml",
       "yaml",
